@@ -1,27 +1,27 @@
---- phlib-1.18/Makefile.in.orig	Wed Mar 26 01:19:50 2003
-+++ phlib-1.18/Makefile.in	Tue Oct 14 10:23:35 2003
-@@ -106,7 +106,9 @@
+--- phlib-1.20/Makefile.in~	Mon Oct 20 21:08:46 2003
++++ phlib-1.20/Makefile.in	Fri Dec  5 18:02:38 2003
+@@ -108,7 +108,9 @@
  $(OURLIBSO): $(OBJS) $(HEAD)
  	@echo Creating shared library $(OURLIBSO)
  	@rm -f $@
--	$(LD) -shared -noinhibit-exec -o$@ $(OBJS)
+-	$(SHLD) -o $@ $(OBJS)
 +	$(CC) -shared -o$@.$(VER_MAJOR).$(VER_MINOR) -Wl,-soname=$@.$(VER_MAJOR) $(OBJS)
 +	ln -sf $@.$(VER_MAJOR).$(VER_MINOR) $@.$(VER_MAJOR)
 +	ln -sf $@.$(VER_MAJOR).$(VER_MINOR) $@
  
  $(OURLIBDB): $(OBJS) $(MDBOBJS) $(HEAD)
  	@echo Creating library $@
-@@ -116,15 +118,17 @@
+@@ -118,15 +120,17 @@
  $(OURLIBDBSO): $(OBJS) $(MDBOBJS) $(HEAD)
  	@echo Creating shared library $@
  	@rm -f $@
--	$(LD) -shared -noinhibit-exec -o$@ $(OBJS) $(MDBOBJS)
+-	$(SHLD) -o $@ $(OBJS) $(MDBOBJS)
 +	$(CC) -shared -o$@.$(VER_MAJOR).$(VER_MINOR) -Wl,-soname=$@.$(VER_MAJOR) $(OBJS)
 +	ln -sf $@.$(VER_MAJOR).$(VER_MINOR) $@.$(VER_MAJOR)
 +	ln -sf $@.$(VER_MAJOR).$(VER_MINOR) $@
  
  $(OBJ)/%.o: %.c $(HEAD)
- 	$(CC) $(CFLAGS) -D_XL_LIB_BUILD -o$@	$<
+ 	$(CC) $(CFLAGS) -D_XL_LIB_BUILD -o $@	$<
  
  install: $(OURLIB)
  	@./mkinstalldirs $(i_libdir) $(MINC)
