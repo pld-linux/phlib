@@ -3,10 +3,11 @@ Summary(pl):	Wspólny zestaw technologii netFluid
 Name:		phlib
 Version:	1.18
 Release:	2
-Source0:	http://www.nfluid.com/download/src/%{name}-%{version}.tgz
-# Source0-md5:	c7ba6fd365fcd60fc4431a907126674e
 License:	GPL
 Group:		Libraries
+Source0:	http://www.nfluid.com/download/src/%{name}-%{version}.tgz
+# Source0-md5:	c7ba6fd365fcd60fc4431a907126674e
+Patch0:		%{name}-soname.patch
 BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,28 +48,35 @@ Statyczne pliki dla programistów dla phlib.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 %{__autoconf}
-%configure
+%configure \
+	cflags=our
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
-	DESTDIR=${RPM_BUILD_ROOT}
+	DESTDIR=$RPM_BUILD_ROOT
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libpxtra.so*
+%attr(755,root,root) %{_libdir}/libpxtra.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%dir %{_includedir}/%{name}
-%{_includedir}/%{name}/*.h
+%attr(755,root,root) %{_libdir}/libpxtra.so
+%{_includedir}/%{name}
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libpxtra.a*
+%{_libdir}/libpxtra.a
