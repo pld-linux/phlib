@@ -62,7 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_libdir}/libpxtra.so.*
+%attr(755,root,root) %{_libdir}/libpxtra.so.*
 
 %files devel
 %defattr(644,root,root,755)
