@@ -2,7 +2,7 @@ Summary:	Common netFluid Technology Function Set
 Summary(pl):	Wspólny zestaw technologii netFluid
 Name:		phlib
 Version:	1.18
-Release:	1
+Release:	2
 Source0:	http://www.nfluid.com/download/src/%{name}-%{version}.tgz
 # Source0-md5:	c7ba6fd365fcd60fc4431a907126674e
 License:	GPL
@@ -66,6 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%dir %{_includedir}/%{name}
 %{_includedir}/%{name}/*.h
 
 %files static
