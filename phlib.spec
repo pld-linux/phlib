@@ -9,6 +9,7 @@ Source0:	http://www.nfluid.com/download/src/%{name}-%{version}.tgz
 # Source0-md5:	521c93a461a58ab808187abbc54a39a7
 Patch0:		%{name}-soname.patch
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -51,7 +52,10 @@ Statyczne biblioteki phlib.
 %patch -p1
 
 %build
+cp -f /usr/share/automake/config.sub .
+%{__aclocal}
 %{__autoconf}
+CFLAGS="%{rpmcflags} -fPIC"
 %configure \
 	cflags=our
 %{__make}
