@@ -27,7 +27,7 @@ pamiêci, sta³± relokacjê pamiêci.
 Summary:	Common netFluid Technology Function Set - development files
 Summary(pl):	Wspólny zestaw funkcji netFluid Technology - pliki dla programistów
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Development files for phlib.
@@ -39,7 +39,7 @@ Pliki dla programistów do phlib.
 Summary:	Common netFluid Technology Function Set - static libraries
 Summary(pl):	Wspólny zestaw funkcji netFluid Technology - biblioteki statyczne
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 phlib static libraries.
