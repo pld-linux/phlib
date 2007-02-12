@@ -1,5 +1,5 @@
 Summary:	Common netFluid Technology Function Set
-Summary(pl):	Wspólny zestaw funkcji netFluid Technology
+Summary(pl.UTF-8):   WspÃ³lny zestaw funkcji netFluid Technology
 Name:		phlib
 Version:	1.20
 Release:	2
@@ -17,34 +17,34 @@ phlib provides the core function set used by netFluid Technology. It
 provides such things as a universal double linked list, very efficient
 constant memory string parsing and building, fixed memory relocatable.
 
-%description -l pl
-phlib udostêpnia podstawowy zestaw funkcji wykorzystywanych przez
-netFluid Technology. Udostêpnia takie rzeczy jak uniwersalne podwójne
-listy, bardzo efektywn± analizê sk³adniow± i tworzenie ³añcuchów w
-pamiêci, sta³± relokacjê pamiêci.
+%description -l pl.UTF-8
+phlib udostÄ™pnia podstawowy zestaw funkcji wykorzystywanych przez
+netFluid Technology. UdostÄ™pnia takie rzeczy jak uniwersalne podwÃ³jne
+listy, bardzo efektywnÄ… analizÄ™ skÅ‚adniowÄ… i tworzenie Å‚aÅ„cuchÃ³w w
+pamiÄ™ci, staÅ‚Ä… relokacjÄ™ pamiÄ™ci.
 
 %package devel
 Summary:	Common netFluid Technology Function Set - development files
-Summary(pl):	Wspólny zestaw funkcji netFluid Technology - pliki dla programistów
+Summary(pl.UTF-8):   WspÃ³lny zestaw funkcji netFluid Technology - pliki dla programistÃ³w
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Development files for phlib.
 
-%description devel -l pl
-Pliki dla programistów do phlib.
+%description devel -l pl.UTF-8
+Pliki dla programistÃ³w do phlib.
 
 %package static
 Summary:	Common netFluid Technology Function Set - static libraries
-Summary(pl):	Wspólny zestaw funkcji netFluid Technology - biblioteki statyczne
+Summary(pl.UTF-8):   WspÃ³lny zestaw funkcji netFluid Technology - biblioteki statyczne
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 phlib static libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki phlib.
 
 %prep
