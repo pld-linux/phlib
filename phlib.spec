@@ -1,5 +1,5 @@
 Summary:	Common netFluid Technology Function Set
-Summary(pl.UTF-8):   Wspólny zestaw funkcji netFluid Technology
+Summary(pl.UTF-8):	Wspólny zestaw funkcji netFluid Technology
 Name:		phlib
 Version:	1.20
 Release:	2
@@ -25,7 +25,7 @@ pamięci, stałą relokację pamięci.
 
 %package devel
 Summary:	Common netFluid Technology Function Set - development files
-Summary(pl.UTF-8):   Wspólny zestaw funkcji netFluid Technology - pliki dla programistów
+Summary(pl.UTF-8):	Wspólny zestaw funkcji netFluid Technology - pliki dla programistów
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -37,7 +37,7 @@ Pliki dla programistów do phlib.
 
 %package static
 Summary:	Common netFluid Technology Function Set - static libraries
-Summary(pl.UTF-8):   Wspólny zestaw funkcji netFluid Technology - biblioteki statyczne
+Summary(pl.UTF-8):	Wspólny zestaw funkcji netFluid Technology - biblioteki statyczne
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
