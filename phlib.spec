@@ -2,7 +2,7 @@ Summary:	Common netFluid Technology Function Set
 Summary(pl.UTF-8):	Wspólny zestaw funkcji netFluid Technology
 Name:		phlib
 Version:	1.20
-Release:	2
+Release:	3
 License:	GPL
 Group:		Libraries
 Source0:	http://www.nfluid.com/download/src/%{name}-%{version}.tgz
